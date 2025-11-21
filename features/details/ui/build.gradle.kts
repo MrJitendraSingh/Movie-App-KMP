@@ -12,16 +12,10 @@ kotlin {
         }
     }
     
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach { iosTarget ->
-        iosTarget.binaries.framework {
-            baseName = "Shared"
-            isStatic = true
-        }
-    }
+
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
     
     sourceSets {
         commonMain.dependencies {
@@ -34,7 +28,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.jitendra.kmp.shared"
+    namespace = "com.jitendra.kmp.details.ui"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
